@@ -17,7 +17,7 @@ Config.AllowedZone = {
 }
 
 function isInAllowedZone(playerCoords)
-    local distance = Vdist(playerCoords.x, playerCoords.y, playerCoords.z, Config.AllowedZone.coordinates.x, Config.AllowedZone.coordinates.y, Config.AllowedZone.coordinates.z)
+    local distance = #(playerCoords - Config.AllowedZone.coordinates) -- more optimazed way.
     return distance <= Config.AllowedZone.radius
 end
 
